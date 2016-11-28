@@ -1,13 +1,13 @@
 def counting(player_num, count_limit)
   count = 1
   players = []
-  i = 0
+  player_id = 0
   direction = 1
 
-  # put players in array
-  (1...(player_num+1)).each do |i|
-    players << "player " + i.to_s
-  end
+  # # put players in array
+  # (1...(player_num+1)).each do |i|
+  #   players << "player " + i.to_s
+  # end
 
  
   while count <= count_limit
@@ -20,9 +20,9 @@ def counting(player_num, count_limit)
   	if count % 11 == 0
   		increment = 2 
   	end
-    puts "#{players[i]} says #{count}"
+    puts "player#{player_id + 1} says #{count}"
     count += 1
-    i = (i + increment * direction) % 10
+    player_id = (player_id + increment * direction) % player_num
   end
 
 end
